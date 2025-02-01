@@ -30,6 +30,12 @@ const App = () => {
         { autoAlpha: 0, scaleY: 0, transformOrigin: "top" },
         { autoAlpha: 1, scaleY: 1, duration: 0.5, ease: "power2.out" }
       );
+      const tl1 = gsap.timeline();
+      const tl2 = gsap.timeline();
+      tl1.to('.rotar',{marginBottom:'0px'}).to('.rotar',{rotate:45}).duration(0.5);
+      tl2.to('.rotar-1',{marginTop:'0px'}).to('.rotar-1',{rotate:-45}).duration(0.5);
+
+
     } else {
       gsap.to(deerRef.current, {
         autoAlpha: 0,
@@ -37,6 +43,8 @@ const App = () => {
         duration: 0.5,
         ease: "power2.in",
       });
+      gsap.to('.rotar',{marginBottom:'4px',rotate:0});
+      gsap.to('.rotar-1',{marginTop:'4px',rotate:0});
     }
     setNav(!nav);
   });
@@ -45,7 +53,7 @@ const App = () => {
     gsap.fromTo(
       ".something",
       { clipPath: "circle(0% at bottom)", backgroundColor: "white" },
-      { clipPath: "circle(100% at bottom)", backgroundColor: "black", duration: 3 }
+      { clipPath: "circle(150% at bottom)", backgroundColor: "black", duration: 3 }
     );
   }, { scope: container });
 
