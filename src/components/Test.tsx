@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import { useGSAP } from "@gsap/react";
+
 import { useRef, useLayoutEffect } from "react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
@@ -15,7 +15,7 @@ gsap.registerEffect({
 
 gsap.registerEffect({
   name: "explode",
-  effect: (targets: any, config: any) => {
+  effect: (targets: any) => {
     return gsap.to(targets, {
       scrollTrigger: {
         trigger: targets,
