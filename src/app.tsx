@@ -2,7 +2,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { useRef, useState } from "react";
 import Navbar from "./components/Navbar";
-
+import Test from "./components/Test";
 import {
   FiInstagram,
   FiLinkedin,
@@ -22,15 +22,17 @@ const App = () => {
   const deerRef = useRef(null);
 
   const { contextSafe } = useGSAP({ scope: container });
+
   const handleHover = contextSafe(() => {
     const handleMouseOut = () => {
-      gsap.to(".upar-niche", { y: 0, duration: 2 });
+      gsap.to(".upar-niche", { y: 0, autoAlpha: 1, duration: 0.5 });
     };
     const handleMouseIn = () => {
-      gsap.to(".upar-niche", { y: 50, duration: 2 });
+      gsap.to(".upar-niche", { y: 50, autoAlpha: 0, duration: 0.5 });
     };
     return { handleMouseOut, handleMouseIn };
   });
+
   const handleClick = contextSafe(() => {
     if (!nav) {
       gsap.fromTo(
@@ -189,7 +191,7 @@ const App = () => {
       <div className="scene text-orange-600 text-8xl">
         <div className="h-screen bg-amber-500 some flex justify-center items-center orange relative">
           <div
-            className="screen h-full w-full flex justify-center items-center"
+            className="screen h-full w-full flex justify-center items-center overflow-hidden"
             id="screen"
           >
             <img
@@ -214,12 +216,12 @@ const App = () => {
 
         <div className="h-screen  some flex justify-center items-center blue relative">
           <div
-            className="screen h-full w-full flex justify-center items-center"
+            className="screen h-full w-full flex justify-center items-center overflow-hidden"
             id="screen1"
           >
             <img
               src="../images/gal2.jpeg"
-              className="h-full w-full object-cover absolute z-[-1] brightness-110 contrast-60 grayscale-10 "
+              className="h-full w-full object-cover absolute z-[-1] brightness-110 contrast-60 grayscale-10  "
             />
             <div className="flex flex-col justify-center items-center h-10 text-amber-200 ">
               <div className="w-full tags flex justify-start">
@@ -238,7 +240,7 @@ const App = () => {
         </div>
         <div className="h-screen  some flex justify-center items-center green relative">
           <div
-            className="screen h-full w-full flex justify-center items-center"
+            className="screen h-full w-full flex justify-center items-center overflow-hidden"
             id="screen2"
           >
             <img
@@ -262,8 +264,9 @@ const App = () => {
         </div>
       </div>
       <div className="design-process h-screen bg-amber-500"></div>
-      <div className="h-screen bg-green-600"></div>
+      <div className="h-screen bg-blue-600"></div>
       <div className="footer"></div>
+      <Test />
     </div>
   );
 };
