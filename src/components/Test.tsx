@@ -8,14 +8,14 @@ gsap.registerPlugin(ScrollTrigger);
 gsap.registerEffect({
   name: "fade",
   defaults: { duration: 2 },
-  effect: (targets, config) => {
+  effect: (targets: any, config: any) => {
     return gsap.to(targets, { duration: config.duration, opacity: 0 });
   },
 });
 
 gsap.registerEffect({
   name: "explode",
-  effect: (targets, config) => {
+  effect: (targets: any, config: any) => {
     return gsap.to(targets, {
       scrollTrigger: {
         trigger: targets,
