@@ -1,17 +1,10 @@
-import gsap from "gsap";
-import { useRef } from "react";
-import { useGSAP } from "@gsap/react";
-
-gsap.registerPlugin(useGSAP);
-
-export default function Test() {
-  const container = useRef(null);
-  const { contextSafe } = useGSAP({ scope: container });
-
+import HoverSwapDivs from "~/components/hoverInOut";
+const forTest = () => {
   return (
-    <div>
-      <div className="mouseEnterAnimation text-4xl">Abhi</div>
-      <div className="mouseOutAnimation text-4xl">Abhi</div>
+    <div className="font-league text-6xl">
+      <HoverSwapDivs Text={"something"} />
     </div>
   );
-}
+};
+
+export default forTest;
