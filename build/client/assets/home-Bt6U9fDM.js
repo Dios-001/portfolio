@@ -1,0 +1,1 @@
+import{w as t}from"./with-props-D3AO8slx.js";import{l as e}from"./chunk-KNED5TY2-BWNdqSdz.js";function r({}){return[{title:"Home Page"},{name:"",content:"Welcome to React Router!"}]}const a=t(function(){return e.jsx("div",{className:""})});export{a as default,r as meta};
